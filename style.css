@@ -8,6 +8,19 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
 }
+h2 {
+  color: #c9c6d3;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 900;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 8px #a44fff99;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+
 
 /* Capa de estrelles animades al fons */
 .stars {
@@ -272,4 +285,85 @@ body {
   color: white;
   font-weight: 500;
   font-size: 1rem;
+}
+
+.educacion-modern {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin:  auto;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.educacion-content-modern {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.educacion-imagen img {
+  max-width: 380px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 30px #a44fff88;
+}
+
+.educacion-lista-modern {
+  flex: 1;
+  min-width: 320px;
+}
+
+.educacion-item {
+  background: rgba(50, 22, 83, 0.4);
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #6f42c1cc;
+  transition: background 0.3s ease;
+}
+
+.educacion-item:hover {
+  background: rgba(111, 66, 193, 0.8);
+  box-shadow: 0 0 40px #a44fffdd;
+}
+
+.educacion-item .fecha {
+  display: block;
+  font-size: 0.85rem;
+  color: #53e2d9;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.educacion-item h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #d4caff;
+  text-transform: uppercase;
+}
+
+.educacion-item p {
+  margin: 0;
+  font-size: 1rem;
+  color: #c9c6d3;
+}
+
+/* Responsive: apilar vertical en pantallas pequeñas */
+@media (max-width: 768px) {
+  .educacion-content-modern {
+    flex-direction: column;
+  }
+
+  .educacion-imagen img {
+    max-width: 90%;
+    margin-bottom: 2rem;
+  }
+
+  .educacion-lista-modern {
+    min-width: auto;
+  }
 }
