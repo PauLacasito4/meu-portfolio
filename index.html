@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Configuración básica del documento -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio de Pau</title>
+
+  <!-- Hoja de estilos propia -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Iconos de Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <!-- Fuente JetBrains Mono para el efecto “dev” -->
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <!-- Fondo de estrellitas para el efecto visual -->
   <div class="stars"></div>
 
+  <!-- Barra de navegación arriba de todo -->
   <header class="navbar">
     <div class="nombre">
+      <!-- Aquí se escribe el nombre con efecto de escritura con JS -->
       <span id="typing-text"></span>
     </div>
     <nav class="menu">
+      <!-- Menú de secciones del portfolio -->
       <ul>
         <li><a href="#">ACERCA DE</a></li>
-        <li><a href="#">EXPERIENCIA</a></li>
         <li><a href="#">HABILIDADES</a></li>
+        <li><a href="#">EXPERIENCIA</a></li>
         <li><a href="#">EDUCACIÓN</a></li>
         <li><a href="#">PROYECTOS</a></li>
         <li><a href="#">CONTACTO</a></li>
@@ -28,25 +39,29 @@
   </header>
 
   <main class="container">
-    <!-- Izquierda -->
+    <!-- Parte izquierda con presentación -->
     <div class="left-side">
       <h1>
         <span class="text-pink-light">Hola,</span><br />
         <span class="text-white">
           Soy <span class="text-pink-dark">Pau Ribera,</span>
         </span><br />
-        Soy <span class="text-teal">Senior Software Engineer.</span>
+        Soy <span class="text-teal">Senior Software Engineer.</span> <!-- Mentirijilla, pero queda pro -->
       </h1>
+
+      <!-- Iconos con enlaces a redes (aún por poner los enlaces de verdad) -->
       <div class="social-icons">
         <a href="#"><i class="fab fa-github"></i></a>
         <a href="#"><i class="fab fa-telegram-plane"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
-        <!-- Figma eliminado -->
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
 
-    <!-- Derecha -->
+    <!-- Parte derecha tipo consola con mis skills como si fueran código -->
     <div class="code-block">
+      <!-- Imitando ventana de terminal con los puntitos de colores -->
       <div class="dots">
         <span class="dot dot-red"></span>
         <span class="dot dot-yellow"></span>
@@ -63,12 +78,49 @@
 
   <span class="text-white">boolean</span> hardWorker = <span class="text-green">true</span>;
   <span class="text-white">boolean</span> problemSolver = <span class="text-green">true</span>;
-  <span class="text-white">String</span> expertise = <span class="text-yellow">"Full-Stack Developer en formació"</span>;
+  <span class="text-white">String</span> expertise = <span class="text-yellow">"Full-Stack Developer en formacion"</span>;
 <span class="text-white">}</span>
       </pre>
     </div>
   </main>
 
+  <!-- Línea separadora para dividir secciones -->
+  <div class="separador"></div>
+
+  <!-- Sección de habilidades técnicas -->
+  <section class="habilidades">
+    <h2>HABILIDADES</h2>
+
+    <!-- Contenedor de habilidades en cuadrícula -->
+    <div class="habilidades-grid">
+      <!-- 1ª fila: lenguajes -->
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" /><span>HTML</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" /><span>CSS</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" /><span>JavaScript</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" /><span>Java</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" /><span>PHP</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" /><span>Python</span></div>
+
+      <!-- 2ª fila: bases de datos y SO -->
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" /><span>MySQL</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" /><span>PostgreSQL</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" /><span>Linux</span></div>
+      <div class="habilidad"><img src="https://img.icons8.com/fluency/48/windows-10.png" alt="Windows" /><span>Windows</span></div>
+
+      <!-- 3ª fila: herramientas -->
+      <div class="habilidad"><img src="https://img.icons8.com/color/48/vmware.png" alt="VMware" /><span>VMware</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" /><span>VS Code</span></div>
+
+      <!-- 4ª fila: otras herramientas útiles -->
+      <div class="habilidad"><img src="https://www.apachefriends.org/images/xampp-logo-ac950edf.svg" alt="XAMPP" /><span>XAMPP</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" /><span>Git</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" /><span>GitHub</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" /><span>Figma</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" /><span>Docker</span></div>
+    </div>
+  </section>
+
+  <!-- Script de efectos tipo máquina de escribir o similares -->
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,36 +1,41 @@
+/* Estils generals per a tot el cos */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', monospace; /* Font rollo programador */
   color: white;
-  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%); /* Fons amb degradat fosc guapet */
   overflow-x: hidden;
   min-height: 100vh;
 }
 
+/* Capa de estrelles animades al fons */
 .stars {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -1; /* Perquè estiga per darrere de tot */
 }
 
+/* Estrelles individuals */
 .star {
   position: absolute;
   width: 2px;
   height: 2px;
   background: white;
   border-radius: 50%;
-  animation: twinkle 2s infinite ease-in-out;
+  animation: twinkle 2s infinite ease-in-out; /* Animació de parpelleig */
 }
 
+/* Brillantor intermitent per les estrelles */
 @keyframes twinkle {
   0%, 100% { opacity: 0.2; }
   50% { opacity: 1; }
 }
 
+/* Barra de navegació superior */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -41,19 +46,21 @@ body {
   top: 0;
   width: 100%;
   min-height: 90px;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.6); /* Fons semi-transparent */
+  backdrop-filter: blur(10px); /* Blur per fer-lo més modernet */
+  -webkit-backdrop-filter: blur(10px); /* Per suport en Safari */
   z-index: 1000;
 }
 
+/* Nom que apareix en l'esquerra de la navbar */
 .nombre {
   font-weight: bold;
   font-size: 1.8rem;
   color: #00f0ff;
-  text-shadow: 0 0 12px #00f0ff;
+  text-shadow: 0 0 12px #00f0ff; /* Brillantor cian */
 }
 
+/* Menú de navegació */
 .menu {
   flex: 1;
 }
@@ -63,25 +70,27 @@ body {
   justify-content: flex-end;
   gap: 1.2rem;
   margin: 0;
-  padding: 0 1rem 0 0; /* padding-right para que no se corte el último */
+  padding: 0 3rem 0 0; /* Margen per a que no es tallara el “CONTACTO” */
   list-style: none;
   box-sizing: border-box;
   flex-wrap: nowrap;
 }
 
+/* Enllaços del menú */
 .menu a {
   text-decoration: none;
   color: white;
   font-weight: 500;
-  font-size: clamp(0.8rem, 1vw, 1rem);
+  font-size: clamp(0.8rem, 1vw, 1rem); /* Responsive */
   padding: 6px 8px;
   transition: color 0.3s ease;
 }
 
 .menu a:hover {
-  color: #1da1f2;
+  color: #1da1f2; /* Blau rollo Twitter */
 }
 
+/* Contenidor general principal */
 .container {
   max-width: 1200px;
   margin: 140px auto 2rem;
@@ -91,12 +100,14 @@ body {
   padding: 1rem;
 }
 
+/* Canvi de layout quan la pantalla és més ampla */
 @media (min-width: 1024px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Part esquerra amb presentació */
 .left-side {
   display: flex;
   flex-direction: column;
@@ -106,6 +117,7 @@ body {
   margin: 0 auto;
 }
 
+/* Títol de benvinguda */
 .left-side h1 {
   font-size: 2.25rem;
   font-weight: 800;
@@ -118,11 +130,13 @@ body {
   }
 }
 
+/* Colors personalitzats per a textos */
 .text-pink-light { color: #f9a8d4; }
 .text-pink-dark { color: #db2777; }
 .text-teal { color: #2dd4bf; }
 .text-white { color: white; }
 
+/* Iconos de xarxes socials */
 .social-icons {
   display: flex;
   gap: 1.5rem;
@@ -137,23 +151,11 @@ body {
   transition: color 0.3s ease;
 }
 
-/* Colores originales para cada red social */
-.social-icons a:nth-child(1) {
-  color: #e5e5e5; /* GitHub negro */
-}
-
-.social-icons a:nth-child(2) {
-  color: #e5eaec; /* Telegram azul claro */
-}
-
-.social-icons a:nth-child(3) {
-  color: #eff2f4; /* Twitter azul */
-}
-
 .social-icons a:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.2); /* Fa un efecte de brill quan passes el ratolí */
 }
 
+/* Bloc de codi simulat */
 .code-block {
   background-color: #0f172a;
   border-radius: 10px;
@@ -172,6 +174,7 @@ body {
   margin: 0;
 }
 
+/* Els 3 puntets tipus terminal Mac */
 .dots {
   display: flex;
   gap: 0.5rem;
@@ -193,7 +196,80 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Colors de sintaxi per al pseudo-codi */
 .text-pink { color: #ec4899; }
 .text-green { color: #22c55e; }
 .text-yellow { color: #facc15; }
 .text-red { color: #ef4444; }
+
+/* Secció d'habilitats */
+.habilidades {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+/* Separador visual entre seccions */
+.separador {
+  width: 60%;
+  height: 2px;
+  margin: 3rem auto;
+  background: linear-gradient(to right, transparent, #38bdf8, transparent);
+  filter: blur(1px);
+  opacity: 0.6;
+  border-radius: 100px;
+}
+
+/* Títol de la secció d'habilitats */
+.habilidades h2 {
+  font-size: 2rem;
+  color: #2dd4bf;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #2dd4bf;
+}
+
+/* Grid responsive per a les habilitats */
+.habilidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+/* Cada habilitat individual (icono + nom) */
+.habilidad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: #1e293b;
+  padding: rem; /* (ojo Pau, ací falta una mida concreta per padding!) */
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 120px;
+  height: 120px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+/* Efecte al passar el ratolí per damunt d'una habilitat */
+.habilidad:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 12px #0ea5e9;
+}
+
+/* Iconos dins de cada habilitat */
+.habilidad img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: brightness(1) contrast(1);
+}
+
+/* Nom de cada tecnologia baix de l'icono */
+.habilidad span {
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+}
