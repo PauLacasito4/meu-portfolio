@@ -1,4 +1,3 @@
-// Texto máquina de escribir
 const texto = "Paulacasito";
 const target = document.getElementById("typing-text");
 

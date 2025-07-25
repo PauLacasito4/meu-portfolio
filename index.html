@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio de Pau</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div class="stars"></div>
@@ -24,6 +26,48 @@
       </ul>
     </nav>
   </header>
+
+  <main class="container">
+    <!-- Izquierda -->
+    <div class="left-side">
+      <h1>
+        <span class="text-pink-light">Hola,</span><br />
+        <span class="text-white">
+          Soy <span class="text-pink-dark">Pau Ribera,</span>
+        </span><br />
+        Soy <span class="text-teal">Senior Software Engineer.</span>
+      </h1>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <!-- Figma eliminado -->
+      </div>
+    </div>
+
+    <!-- Derecha -->
+    <div class="code-block">
+      <div class="dots">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <hr />
+      <pre class="whitespace-pre-wrap">
+<span class="text-pink">public class</span> Engineer <span class="text-white">{</span>
+  <span class="text-white">String</span> name = <span class="text-green">"Paulacasito"</span>;
+  <span class="text-white">String</span> frontend = <span class="text-yellow">"HTML, CSS, JavaScript"</span>;
+  <span class="text-white">String</span> backend = <span class="text-yellow">"Java, PHP, Python"</span>;
+  <span class="text-white">String</span> databases = <span class="text-yellow">"MySQL, PostgreSQL"</span>;
+  <span class="text-white">String</span> tools = <span class="text-yellow">"pgAdmin4, Linux, VirtualBox, VMware, NetBeans, Visual Studio Code, Visual Studio, Photoshop"</span>;
+
+  <span class="text-white">boolean</span> hardWorker = <span class="text-green">true</span>;
+  <span class="text-white">boolean</span> problemSolver = <span class="text-green">true</span>;
+  <span class="text-white">String</span> expertise = <span class="text-yellow">"Full-Stack Developer en formació"</span>;
+<span class="text-white">}</span>
+      </pre>
+    </div>
+  </main>
 
   <script src="script.js"></script>
 </body>

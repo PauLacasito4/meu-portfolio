@@ -1,16 +1,13 @@
-/* === Fondo general === */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
   color: white;
   background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
   overflow-x: hidden;
-  overflow-y: auto;
   min-height: 100vh;
 }
 
-/* === Fondo estrellado === */
 .stars {
   position: fixed;
   top: 0;
@@ -34,7 +31,6 @@ body {
   50% { opacity: 1; }
 }
 
-/* === Barra de navegación === */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -44,39 +40,33 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  min-height: 90px;        
-  box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(6px);
+  min-height: 90px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 1000;
 }
 
-/* === Nombre a la izquierda === */
 .nombre {
   font-weight: bold;
   font-size: 1.8rem;
-  color: #00f0ff;           
+  color: #00f0ff;
   text-shadow: 0 0 12px #00f0ff;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  white-space: nowrap;
 }
 
-/* === Menú de navegación === */
 .menu {
   flex: 1;
 }
 
 .menu ul {
   display: flex;
-  flex-wrap: wrap;          
   justify-content: flex-end;
   gap: 1.2rem;
   margin: 0;
-  padding: 0;
+  padding: 0 1rem 0 0; /* padding-right para que no se corte el último */
   list-style: none;
   box-sizing: border-box;
+  flex-wrap: nowrap;
 }
 
 .menu a {
@@ -91,3 +81,119 @@ body {
 .menu a:hover {
   color: #1da1f2;
 }
+
+.container {
+  max-width: 1200px;
+  margin: 140px auto 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.left-side h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .left-side h1 {
+    font-size: 3rem;
+  }
+}
+
+.text-pink-light { color: #f9a8d4; }
+.text-pink-dark { color: #db2777; }
+.text-teal { color: #2dd4bf; }
+.text-white { color: white; }
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.social-icons a {
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+/* Colores originales para cada red social */
+.social-icons a:nth-child(1) {
+  color: #e5e5e5; /* GitHub negro */
+}
+
+.social-icons a:nth-child(2) {
+  color: #e5eaec; /* Telegram azul claro */
+}
+
+.social-icons a:nth-child(3) {
+  color: #eff2f4; /* Twitter azul */
+}
+
+.social-icons a:hover {
+  filter: brightness(1.2);
+}
+
+.code-block {
+  background-color: #0f172a;
+  border-radius: 10px;
+  padding: 1rem;
+  font-family: monospace;
+  color: white;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin: 0 auto;
+}
+
+.code-block pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+}
+
+.dots {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+}
+
+.dot-red { background-color: #F87171; }
+.dot-yellow { background-color: #FBBF24; }
+.dot-green { background-color: #86EFAC; }
+
+.code-block hr {
+  border: 1px solid #2E3A7B;
+  margin-bottom: 1rem;
+}
+
+.text-pink { color: #ec4899; }
+.text-green { color: #22c55e; }
+.text-yellow { color: #facc15; }
+.text-red { color: #ef4444; }
