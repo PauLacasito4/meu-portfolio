@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -7,6 +11,7 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
 }
+
 h2 {
   color: #c9c6d3;
   font-family: 'JetBrains Mono', monospace;
@@ -19,7 +24,6 @@ h2 {
   text-transform: uppercase;
 }
 
-/* Efecto estrellas */
 .stars {
   position: fixed;
   top: 0;
@@ -28,6 +32,7 @@ h2 {
   height: 100%;
   z-index: -1; 
 }
+
 .star {
   position: absolute;
   width: 2px;
@@ -36,18 +41,20 @@ h2 {
   border-radius: 50%;
   animation: twinkle 2s infinite ease-in-out; 
 }
+
 @keyframes twinkle {
   0%, 100% { opacity: 0.2; }
   50% { opacity: 1; }
 }
-/* Fin estrellas */
 
 .barra-navegacion {
+  padding: 0 1rem;   
+  box-sizing: border-box; 
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 0rem;
+  padding: 1rem;
   position: fixed;
   top: 0;
   width: 100%;
@@ -56,6 +63,67 @@ h2 {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 1000;
+}
+.selector-idioma {
+  position: relative;  /* Esto es clave para el posicionamiento del desplegable */
+  display: block; /* Para que el ancho sea el mínimo necesario y el desplegable quede bien */
+}
+
+.selector-idioma button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.selector-idioma button .bandera-icono {
+  width: 24px;
+  height: auto;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.menu-idiomas {
+  display: none;
+  position: absolute;
+  background-color: #111;
+  margin-top: 5px;
+  border-radius: 6px;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  list-style: none;
+  z-index: 10000;
+}
+
+.selector-idioma.open .menu-idiomas {
+  display: block;
+}
+
+.menu-idiomas li button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  width: 100%;
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+
+.menu-idiomas li button img {
+  width: 20px;
+  height: auto;
+  margin-right: 8px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.menu-idiomas li button:hover {
+  background-color: #333;
 }
 
 .nombre {
@@ -86,7 +154,6 @@ h2 {
   color: #1da1f2;
 }
 
-/* Contenidor general principal */
 .container {
   max-width: 1200px;
   margin: 140px auto 2rem;
@@ -96,14 +163,12 @@ h2 {
   padding: 1rem;
 }
 
-/* Canvi de layout quan la pantalla és més ampla */
 @media (min-width: 1024px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Part esquerra amb presentació */
 .left-side {
   display: flex;
   flex-direction: column;
@@ -113,7 +178,6 @@ h2 {
   margin: 0 auto;
 }
 
-/* Títol de benvinguda */
 .left-side h1 {
   font-size: 2.25rem;
   font-weight: 800;
@@ -126,13 +190,11 @@ h2 {
   }
 }
 
-/* Colors personalitzats per a textos */
 .text-pink-light { color: #f9a8d4; }
 .text-pink-dark { color: #db2777; }
 .text-teal { color: #2dd4bf; }
 .text-white { color: white; }
 
-/* Iconos de xarxes socials */
 .social-icons {
   display: flex;
   gap: 1.5rem;
@@ -148,10 +210,9 @@ h2 {
 }
 
 .social-icons a:hover {
-  filter: brightness(1.2); /* Fa un efecte de brill quan passes el ratolí */
+  filter: brightness(1.2);
 }
 
-/* Bloc de codi simulat */
 .code-block {
   background-color: #0f172a;
   border-radius: 10px;
@@ -170,7 +231,6 @@ h2 {
   margin: 0;
 }
 
-/* Els 3 puntets tipus terminal Mac */
 .dots {
   display: flex;
   gap: 0.5rem;
@@ -192,19 +252,16 @@ h2 {
   margin-bottom: 1rem;
 }
 
-/* Colors de sintaxi per al pseudo-codi */
 .text-pink { color: #ec4899; }
 .text-green { color: #22c55e; }
 .text-yellow { color: #facc15; }
 .text-red { color: #ef4444; }
 
-/* Secció d'habilitats */
 .habilidades {
   text-align: center;
   padding: 4rem 2rem;
 }
 
-/* Separador visual entre seccions */
 .separador {
   width: 60%;
   height: 2px;
@@ -215,7 +272,6 @@ h2 {
   border-radius: 100px;
 }
 
-/* Títol de la secció d'habilitats */
 .habilidades h2 {
   font-size: 2rem;
   color: #2dd4bf;
@@ -223,7 +279,6 @@ h2 {
   text-shadow: 0 0 10px #2dd4bf;
 }
 
-/* Grid responsive per a les habilitats */
 .habilidades-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -233,7 +288,6 @@ h2 {
   justify-items: center;
 }
 
-/* Cada habilitat individual (icono + nom) */
 .habilidad {
   display: flex;
   flex-direction: column;
@@ -241,7 +295,7 @@ h2 {
   justify-content: center;
   gap: 0.75rem;
   background-color: #1e293b;
-  padding: 1rem; /* corregido padding */
+  padding: 1rem;
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 120px;
@@ -249,13 +303,11 @@ h2 {
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
-/* Efecte al passar el ratolí per damunt d'una habilitat */
 .habilidad:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 12px #0ea5e9;
 }
 
-/* Iconos dins de cada habilitat */
 .habilidad img {
   width: 60px;
   height: 60px;
@@ -263,7 +315,6 @@ h2 {
   filter: brightness(1) contrast(1);
 }
 
-/* Nom de cada tecnologia baix de l'icono */
 .habilidad span {
   color: white;
   font-weight: 500;
@@ -339,20 +390,18 @@ h2 {
   box-shadow: 0 0 10px #a44fff88;
 }
 
-/* Responsive para móviles */
 @media (max-width: 600px) {
   .contenido-educacion {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .imagen-educacion img {
     width: 100%;
     height: auto;
   }
 }
 
-.experincia-modern {
+.experiencia-modern {
   padding: 5rem 2rem;
   max-width: 1100px;
   margin: auto;
@@ -360,7 +409,7 @@ h2 {
   font-family: 'JetBrains Mono', monospace;
 }
 
-.experincia-grid {
+.experiencia-grid {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -368,7 +417,7 @@ h2 {
   justify-content: center;
 }
 
-.experincia-item {
+.experiencia-item {
   background: rgba(50, 22, 83, 0.4);
   padding: 1.5rem 2rem;
   border-radius: 15px;
@@ -378,12 +427,12 @@ h2 {
   max-width: 700px;
 }
 
-.experincia-item:hover {
+.experiencia-item:hover {
   background: rgba(111, 66, 193, 0.8);
   box-shadow: 0 0 40px #a44fffdd;
 }
 
-.experincia-item .fecha {
+.experiencia-item .fecha {
   display: block;
   font-size: 0.85rem;
   color: #53e2d9;
@@ -392,14 +441,12 @@ h2 {
   letter-spacing: 0.05em;
 }
 
-/* NUEVO: contenido con imagen a la izquierda */
 .contenido-con-imagen {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
 
-/* Imagen dentro del recuadro */
 .imagen-cuadro img {
   width: 100px;
   height: 100px;
@@ -408,7 +455,6 @@ h2 {
   box-shadow: 0 0 10px #a44fff88;
 }
 
-/* Texto al lado de la imagen */
 .texto-cuadro h3 {
   margin: 0 0 0.3rem 0;
   font-size: 1.1rem;
@@ -423,13 +469,11 @@ h2 {
   color: #c9c6d3;
 }
 
-/* RESPONSIVE opcional: columna en móviles */
 @media (max-width: 600px) {
   .contenido-con-imagen {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .imagen-cuadro img {
     width: 100%;
     height: auto;
@@ -497,6 +541,7 @@ h2 {
 .formulario-moderno button:hover {
   background-color: #00a58e;
 }
+
 .footer {
   background-color: #111;
   padding: 1.5rem 2rem;
@@ -508,7 +553,7 @@ h2 {
 .footer-container {
   max-width: 1100px;
   margin: 0 auto;
-  text-align: center; /* centra el texto */
+  text-align: center;
 }
 
 .footer-left p {
