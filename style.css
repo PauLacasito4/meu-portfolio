@@ -1,10 +1,9 @@
-/* Estils generals per a tot el cos */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'JetBrains Mono', monospace; /* Font rollo programador */
+  font-family: 'JetBrains Mono', monospace; 
   color: white;
-  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%); /* Fons amb degradat fosc guapet */
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%); 
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -20,36 +19,30 @@ h2 {
   text-transform: uppercase;
 }
 
-
-
-/* Capa de estrelles animades al fons */
+/* Efecto estrellas */
 .stars {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Perquè estiga per darrere de tot */
+  z-index: -1; 
 }
-
-/* Estrelles individuals */
 .star {
   position: absolute;
   width: 2px;
   height: 2px;
   background: white;
   border-radius: 50%;
-  animation: twinkle 2s infinite ease-in-out; /* Animació de parpelleig */
+  animation: twinkle 2s infinite ease-in-out; 
 }
-
-/* Brillantor intermitent per les estrelles */
 @keyframes twinkle {
   0%, 100% { opacity: 0.2; }
   50% { opacity: 1; }
 }
+/* Fin estrellas */
 
-/* Barra de navegació superior */
-.navbar {
+.barra-navegacion {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,7 +58,6 @@ h2 {
   z-index: 1000;
 }
 
-/* Nom que apareix en l'esquerra de la navbar */
 .nombre {
   font-weight: bold;
   font-size: 1.8rem;
@@ -258,7 +250,7 @@ h2 {
   justify-content: center;
   gap: 0.75rem;
   background-color: #1e293b;
-  padding: rem; /* (ojo Pau, ací falta una mida concreta per padding!) */
+  padding: 1rem; /* corregido padding */
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 120px;
@@ -290,38 +282,27 @@ h2 {
 .educacion-modern {
   padding: 5rem 2rem;
   max-width: 1100px;
-  margin:  auto;
+  margin: auto;
   color: white;
   font-family: 'JetBrains Mono', monospace;
 }
 
-.educacion-content-modern {
+.educacion-grid {
   display: flex;
-  gap: 3rem;
+  flex-direction: column;
+  gap: 2rem;
   align-items: center;
-  flex-wrap: wrap;
   justify-content: center;
-}
-
-.educacion-imagen img {
-  max-width: 380px;
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 0 30px #a44fff88;
-}
-
-.educacion-lista-modern {
-  flex: 1;
-  min-width: 320px;
 }
 
 .educacion-item {
   background: rgba(50, 22, 83, 0.4);
   padding: 1.5rem 2rem;
-  margin-bottom: 1.5rem;
   border-radius: 15px;
   box-shadow: 0 0 20px #6f42c1cc;
   transition: background 0.3s ease;
+  width: 100%;
+  max-width: 700px;
 }
 
 .educacion-item:hover {
@@ -329,41 +310,226 @@ h2 {
   box-shadow: 0 0 40px #a44fffdd;
 }
 
-.educacion-item .fecha {
+.fecha {
   display: block;
   font-size: 0.85rem;
   color: #53e2d9;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
   font-weight: 500;
   letter-spacing: 0.05em;
 }
 
-.educacion-item h3 {
+.contenido-educacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.texto-educacion h3 {
   margin: 0 0 0.3rem 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #d4caff;
   text-transform: uppercase;
 }
 
-.educacion-item p {
+.texto-educacion p {
   margin: 0;
   font-size: 1rem;
   color: #c9c6d3;
 }
 
-/* Responsive: apilar vertical en pantallas pequeñas */
-@media (max-width: 768px) {
-  .educacion-content-modern {
+.imagen-educacion img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #a44fff88;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .contenido-educacion {
     flex-direction: column;
+    align-items: flex-start;
   }
 
-  .educacion-imagen img {
-    max-width: 90%;
-    margin-bottom: 2rem;
+  .imagen-educacion img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.experincia-modern {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.experincia-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.experincia-item {
+  background: rgba(50, 22, 83, 0.4);
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #6f42c1cc;
+  transition: background 0.3s ease;
+  width: 100%;
+  max-width: 700px;
+}
+
+.experincia-item:hover {
+  background: rgba(111, 66, 193, 0.8);
+  box-shadow: 0 0 40px #a44fffdd;
+}
+
+.experincia-item .fecha {
+  display: block;
+  font-size: 0.85rem;
+  color: #53e2d9;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* NUEVO: contenido con imagen a la izquierda */
+.contenido-con-imagen {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Imagen dentro del recuadro */
+.imagen-cuadro img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #a44fff88;
+}
+
+/* Texto al lado de la imagen */
+.texto-cuadro h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #d4caff;
+  text-transform: uppercase;
+}
+
+.texto-cuadro p {
+  margin: 0;
+  font-size: 1rem;
+  color: #c9c6d3;
+}
+
+/* RESPONSIVE opcional: columna en móviles */
+@media (max-width: 600px) {
+  .contenido-con-imagen {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .educacion-lista-modern {
-    min-width: auto;
+  .imagen-cuadro img {
+    width: 100%;
+    height: auto;
   }
+}
+
+/* DESPLEGABLE IDIOMAS */
+
+/* Contenedor dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Botón con la bandera visible siempre */
+.dropbtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: white;
+  font-size: 1rem;
+  padding: 6px 8px;
+  font-family: 'JetBrains Mono', monospace;
+  user-select: none;
+}
+
+/* Foco para accesibilidad */
+.dropbtn:focus {
+  outline: 2px solid #1da1f2;
+  outline-offset: 2px;
+}
+
+/* Flecha para indicar dropdown */
+.dropbtn i {
+  font-size: 0.7rem;
+  margin-left: 0.1rem;
+}
+
+/* Menú desplegable oculto por defecto */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%; /* justo debajo del botón */
+  background-color: #1e293b;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 1500;
+  padding: 0.5rem 0;
+  margin-top: 0.25rem;
+}
+
+/* Mostrar menú solo al hacer hover o focus en dropdown */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  display: block;
+}
+
+/* Opciones del menú */
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content li a {
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content li a:hover,
+.dropdown-content li a:focus {
+  background-color: #2563eb;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Iconos de bandera */
+.flag-icon {
+  width: 24px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
