@@ -1,41 +1,48 @@
-/* === Fondo general === */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'JetBrains Mono', monospace; 
   color: white;
-  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%); 
   overflow-x: hidden;
-  overflow-y: auto;
   min-height: 100vh;
 }
+h2 {
+  color: #c9c6d3;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 900;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 8px #a44fff99;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
 
-/* === Fondo estrellado === */
+/* Efecto estrellas */
 .stars {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -1; 
 }
-
 .star {
   position: absolute;
   width: 2px;
   height: 2px;
   background: white;
   border-radius: 50%;
-  animation: twinkle 2s infinite ease-in-out;
+  animation: twinkle 2s infinite ease-in-out; 
 }
-
 @keyframes twinkle {
   0%, 100% { opacity: 0.2; }
   50% { opacity: 1; }
 }
+/* Fin estrellas */
 
-/* === Barra de navegación === */
-.navbar {
+.barra-navegacion {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,50 +51,485 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  min-height: 90px;        
-  box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(6px);
+  min-height: 90px;
+  background: rgba(0, 0, 0, 0.6); /* Fons semi-transparent */
+  backdrop-filter: blur(10px); /* Blur per fer-lo més modernet */
+  -webkit-backdrop-filter: blur(10px); /* Per suport en Safari */
   z-index: 1000;
 }
 
-/* === Nombre a la izquierda === */
 .nombre {
   font-weight: bold;
   font-size: 1.8rem;
-  color: #00f0ff;           
-  text-shadow: 0 0 12px #00f0ff;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  white-space: nowrap;
+  color: #00f0ff;
+  text-shadow: 0 0 12px #00f0ff; /* Brillantor cian */
 }
 
-/* === Menú de navegación === */
+/* Menú de navegació */
 .menu {
   flex: 1;
 }
 
 .menu ul {
   display: flex;
-  flex-wrap: wrap;          
   justify-content: flex-end;
   gap: 1.2rem;
   margin: 0;
-  padding: 0;
+  padding: 0 3rem 0 0; /* Margen per a que no es tallara el “CONTACTO” */
   list-style: none;
   box-sizing: border-box;
+  flex-wrap: nowrap;
 }
 
+/* Enllaços del menú */
 .menu a {
   text-decoration: none;
   color: white;
   font-weight: 500;
-  font-size: clamp(0.8rem, 1vw, 1rem);
+  font-size: clamp(0.8rem, 1vw, 1rem); /* Responsive */
   padding: 6px 8px;
   transition: color 0.3s ease;
 }
 
 .menu a:hover {
-  color: #1da1f2;
+  color: #1da1f2; /* Blau rollo Twitter */
+}
+
+/* Contenidor general principal */
+.container {
+  max-width: 1200px;
+  margin: 140px auto 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+/* Canvi de layout quan la pantalla és més ampla */
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Part esquerra amb presentació */
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Títol de benvinguda */
+.left-side h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .left-side h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Colors personalitzats per a textos */
+.text-pink-light { color: #f9a8d4; }
+.text-pink-dark { color: #db2777; }
+.text-teal { color: #2dd4bf; }
+.text-white { color: white; }
+
+/* Iconos de xarxes socials */
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.social-icons a {
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  filter: brightness(1.2); /* Fa un efecte de brill quan passes el ratolí */
+}
+
+/* Bloc de codi simulat */
+.code-block {
+  background-color: #0f172a;
+  border-radius: 10px;
+  padding: 1rem;
+  font-family: monospace;
+  color: white;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin: 0 auto;
+}
+
+.code-block pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+}
+
+/* Els 3 puntets tipus terminal Mac */
+.dots {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+}
+
+.dot-red { background-color: #F87171; }
+.dot-yellow { background-color: #FBBF24; }
+.dot-green { background-color: #86EFAC; }
+
+.code-block hr {
+  border: 1px solid #2E3A7B;
+  margin-bottom: 1rem;
+}
+
+/* Colors de sintaxi per al pseudo-codi */
+.text-pink { color: #ec4899; }
+.text-green { color: #22c55e; }
+.text-yellow { color: #facc15; }
+.text-red { color: #ef4444; }
+
+/* Secció d'habilitats */
+.habilidades {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+/* Separador visual entre seccions */
+.separador {
+  width: 60%;
+  height: 2px;
+  margin: 3rem auto;
+  background: linear-gradient(to right, transparent, #38bdf8, transparent);
+  filter: blur(1px);
+  opacity: 0.6;
+  border-radius: 100px;
+}
+
+/* Títol de la secció d'habilitats */
+.habilidades h2 {
+  font-size: 2rem;
+  color: #2dd4bf;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #2dd4bf;
+}
+
+/* Grid responsive per a les habilitats */
+.habilidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+/* Cada habilitat individual (icono + nom) */
+.habilidad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: #1e293b;
+  padding: 1rem; /* corregido padding */
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 120px;
+  height: 120px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+/* Efecte al passar el ratolí per damunt d'una habilitat */
+.habilidad:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 12px #0ea5e9;
+}
+
+/* Iconos dins de cada habilitat */
+.habilidad img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: brightness(1) contrast(1);
+}
+
+/* Nom de cada tecnologia baix de l'icono */
+.habilidad span {
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.educacion-modern {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.educacion-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.educacion-item {
+  background: rgba(50, 22, 83, 0.4);
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #6f42c1cc;
+  transition: background 0.3s ease;
+  width: 100%;
+  max-width: 700px;
+}
+
+.educacion-item:hover {
+  background: rgba(111, 66, 193, 0.8);
+  box-shadow: 0 0 40px #a44fffdd;
+}
+
+.fecha {
+  display: block;
+  font-size: 0.85rem;
+  color: #53e2d9;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.contenido-educacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.texto-educacion h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #d4caff;
+  text-transform: uppercase;
+}
+
+.texto-educacion p {
+  margin: 0;
+  font-size: 1rem;
+  color: #c9c6d3;
+}
+
+.imagen-educacion img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #a44fff88;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .contenido-educacion {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .imagen-educacion img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.experincia-modern {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.experincia-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.experincia-item {
+  background: rgba(50, 22, 83, 0.4);
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #6f42c1cc;
+  transition: background 0.3s ease;
+  width: 100%;
+  max-width: 700px;
+}
+
+.experincia-item:hover {
+  background: rgba(111, 66, 193, 0.8);
+  box-shadow: 0 0 40px #a44fffdd;
+}
+
+.experincia-item .fecha {
+  display: block;
+  font-size: 0.85rem;
+  color: #53e2d9;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* NUEVO: contenido con imagen a la izquierda */
+.contenido-con-imagen {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Imagen dentro del recuadro */
+.imagen-cuadro img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #a44fff88;
+}
+
+/* Texto al lado de la imagen */
+.texto-cuadro h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #d4caff;
+  text-transform: uppercase;
+}
+
+.texto-cuadro p {
+  margin: 0;
+  font-size: 1rem;
+  color: #c9c6d3;
+}
+
+/* RESPONSIVE opcional: columna en móviles */
+@media (max-width: 600px) {
+  .contenido-con-imagen {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .imagen-cuadro img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* DESPLEGABLE IDIOMAS */
+
+/* Contenedor dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Botón con la bandera visible siempre */
+.dropbtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: white;
+  font-size: 1rem;
+  padding: 6px 8px;
+  font-family: 'JetBrains Mono', monospace;
+  user-select: none;
+}
+
+/* Foco para accesibilidad */
+.dropbtn:focus {
+  outline: 2px solid #1da1f2;
+  outline-offset: 2px;
+}
+
+/* Flecha para indicar dropdown */
+.dropbtn i {
+  font-size: 0.7rem;
+  margin-left: 0.1rem;
+}
+
+/* Menú desplegable oculto por defecto */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%; /* justo debajo del botón */
+  background-color: #1e293b;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 1500;
+  padding: 0.5rem 0;
+  margin-top: 0.25rem;
+}
+
+/* Mostrar menú solo al hacer hover o focus en dropdown */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  display: block;
+}
+
+/* Opciones del menú */
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content li a {
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content li a:hover,
+.dropdown-content li a:focus {
+  background-color: #2563eb;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Iconos de bandera */
+.flag-icon {
+  width: 24px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }

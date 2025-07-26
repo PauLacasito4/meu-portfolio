@@ -5,25 +5,202 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio de Pau</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <!-- Fondo de estrellas -->
   <div class="stars"></div>
 
-  <header class="navbar">
+  <!-- Barra de navegación -->
+  <header class="barra-navegacion">
     <div class="nombre">
       <span id="typing-text"></span>
     </div>
-    <nav class="menu">
-      <ul>
-        <li><a href="#">ACERCA DE</a></li>
-        <li><a href="#">EXPERIENCIA</a></li>
-        <li><a href="#">HABILIDADES</a></li>
-        <li><a href="#">EDUCACIÓN</a></li>
-        <li><a href="#">PROYECTOS</a></li>
-        <li><a href="#">CONTACTO</a></li>
+<nav class="menu">
+  <ul>
+    <li><a href="#">ACERCA DE</a></li>
+    <li><a href="#">HABILIDADES</a></li>
+    <li><a href="#">EDUCACIÓN</a></li>
+    <li><a href="#">EXPERIENCIA</a></li>
+    <li><a href="#">PROYECTOS</a></li>
+    <li><a href="#">CONTACTO</a></li>
+
+<!-- Desplegable idiomas -->
+        <li class="dropdown" tabindex="0">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-label="Seleccionar idioma" id="dropdownBtn">
+            <img src="imagenes/valenciana.png" alt="Valenciano" class="flag-icon" />
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="dropdown-content" role="menu" aria-label="Seleccionar idioma" aria-labelledby="dropdownBtn">
+            <li role="menuitem"><a href="#" data-lang="val" tabindex="-1"><img src="imagenes/valencia.png" alt="Valenciano" class="flag-icon" /> Valenciano</a></li>
+            <li role="menuitem"><a href="#" data-lang="esp" tabindex="-1"><img src="imagenes/esp.png" alt="Español" class="flag-icon" /> Español</a></li>
+            <li role="menuitem"><a href="#" data-lang="eng" tabindex="-1"><img src="imagenes/ing.jpg" alt="Inglés" class="flag-icon" /> Inglés</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
   </header>
+
+  <main class="container">
+    <div class="left-side">
+      <h1>
+        <span class="text-pink-light">Hola,</span><br />
+        <span class="text-white">
+          Soy <span class="text-pink-dark">Pau Ribera,</span>
+        </span><br />
+        Soy <span class="text-teal">Senior Software Engineer.</span> 
+      </h1>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <!-- La termianl -->
+      <div class="dots">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <hr />
+      <pre class="whitespace-pre-wrap">
+<span class="text-pink">public class</span> Engineer <span class="text-white">{</span>
+  <span class="text-white">String</span> name = <span class="text-green">"Paulacasito"</span>;
+  <span class="text-white">String</span> frontend = <span class="text-yellow">"HTML, CSS, JavaScript"</span>;
+  <span class="text-white">String</span> backend = <span class="text-yellow">"Java, PHP, Python"</span>;
+  <span class="text-white">String</span> databases = <span class="text-yellow">"MySQL, PostgreSQL"</span>;
+  <span class="text-white">String</span> tools = <span class="text-yellow">"pgAdmin4, Linux, VirtualBox, VMware, NetBeans, Visual Studio Code, Visual Studio, Photoshop"</span>;
+  <span class="text-white">String</span>" languajes = <span class="text-yellow">"Valenciano, Español, Inglés"</span>;
+
+  <span class="text-white">boolean</span> hardWorker = <span class="text-green">true</span>;
+  <span class="text-white">boolean</span> problemSolver = <span class="text-green">true</span>;
+  <span class="text-white">String</span> expertise = <span class="text-yellow">"Full-Stack Developer en formacion"</span>;
+<span class="text-white">}</span>
+      </pre>
+    </div>
+  </main>
+
+  <div class="separador"></div>
+        <h2>EDUCACION</h2>
+<section class="educacion-modern">
+  <div class="educacion-grid">
+
+    <div class="educacion-item">
+      <div class="contenido-educacion">
+        <div class="texto-educacion">
+          <span class="fecha">2024 - actualmente</span>
+          <h3>Grado Superior en Desarrollo de Aplicaciones Web</h3>
+          <p>IES José Rodrigo Botet</p>
+        </div>
+        <div class="imagen-educacion">
+          <img src="imagenes/RodrigoBotet.png" alt="DAW" />
+        </div>
+      </div>
+    </div>
+
+    <div class="educacion-item">
+      <div class="contenido-educacion">
+        <div class="texto-educacion">
+          <span class="fecha">2022 - 2024</span>
+          <h3>Grado Medio Sistemas Microinformáticos y Redes</h3>
+          <p>Centre Privat La Purísima Valencia</p>
+        </div>
+        <div class="imagen-educacion">
+          <img src="imagenes/LaPurisima.jpeg" alt="SMR" />
+        </div>
+      </div>
+    </div>
+
+    <div class="educacion-item">
+      <div class="contenido-educacion">
+        <div class="texto-educacion">
+          <span class="fecha">2017 - 2022</span>
+          <h3>Educación Secundaria Obligatoria</h3>
+          <p>Centro Concertado de Enseñanza Asunción de Nuestra Señora</p>
+        </div>
+        <div class="imagen-educacion">
+          <img src="imagenes/Asuncion.jpg" alt="ESO" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <div class="separador"></div>
+<section class="habilidades">
+    <h2>HABILIDADES</h2>
+
+    <div class="habilidades-grid">
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" /><span>HTML</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" /><span>CSS</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" /><span>JavaScript</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" /><span>Java</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" /><span>PHP</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" /><span>Python</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" /><span>MySQL</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" /><span>PostgreSQL</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" /><span>Linux</span></div>
+      <div class="habilidad"><img src="https://img.icons8.com/fluency/48/windows-10.png" alt="Windows" /><span>Windows</span></div>
+      <div class="habilidad"><img src="https://img.icons8.com/color/48/vmware.png" alt="VMware" /><span>VMware</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" /><span>VS Code</span></div>
+      <div class="habilidad"><img src="https://www.apachefriends.org/images/xampp-logo-ac950edf.svg" alt="XAMPP" /><span>XAMPP</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" /><span>Git</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" /><span>GitHub</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" /><span>Figma</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" /><span>Docker</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" /><span>WordPress</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop" /><span>Photoshop</span></div>
+      <div class="habilidad"><img src="https://img.icons8.com/fluency/48/microsoft-office-2019.png" alt="Office" /><span>Office</span></div>
+      <div class="habilidad"><img src="https://img.icons8.com/color/48/000000/virtualbox.png" alt="VirtualBox" /><span>VirtualBox</span></div>
+      <div class="habilidad"><img src="imagenes/Tailwind.png" alt="Tailwind CSS" /><span>Tailwind CSS</span></div>
+      <div class="habilidad"><img src="imagenes/odoo.webp" alt="Odoo" style="background: white; border-radius: 5px; padding: 2px;" /><span>Odoo</span></div>
+      <div class="habilidad"><img src="imagenes/tracer.webp" alt="Packet Tracer" style="border-radius: 5px;" /><span>Packet Tracer</span></div>
+    </div>
+</section>
+
+<div class="separador"></div>
+<h2>EXPERIENCIA</h2>
+
+<section class="experincia-modern">
+  <div class="experincia-grid">
+    <div class="experincia-item">
+      <span class="fecha">20/03/2025 - 13/06/2025</span>
+      <div class="contenido-con-imagen">
+        <div class="imagen-cuadro">
+          <img src="imagenes/FotoPolicia.png" alt="Foto prácticas logo policia" />
+        </div>
+        <div class="texto-cuadro">
+          <h3>Prácticas Grado Medio</h3>
+          <p>Técnico de sistemas microinformáticos en Policía Local de Riba-roja de Túria</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="separador"></div>
+<h2>PROYECTOS</h2>
+<section class="proyectos">
+  <div class="proyecto">
+    
+  </div>
+</section>
+
+<div class="separador"></div>
+<h2>CONTACTO</h2>
+<section class="contactos">
+  <div class="contacto">
+    
+  </div>
+</section>
 
   <script src="script.js"></script>
 </body>
