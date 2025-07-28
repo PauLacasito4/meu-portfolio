@@ -1,64 +1,79 @@
 <!DOCTYPE html>
-<html lang="ca"> <!-- Valencià -->
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio de Pau</title>
+  <title data-traduccion="title">Paulacasito</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <!-- Fons d'estrelles -->
+  <!-- Fondo de estrellas -->
   <div class="stars"></div>
 
-  <!-- Barra de navegació -->
-  <header class="barra-navegacion">
-    <div class="nombre">
-      <span id="typing-text"></span>
-    </div>
-    <nav class="menu" role="navigation" aria-label="Menú principal">
-      <ul>
-        <li><a href="#sobre-mi">SOBRE MI</a></li>
-        <li><a href="#habilidades">HABILITATS</a></li>
-        <li><a href="#educacion">EDUCACIÓ</a></li>
-        <li><a href="#experiencia">EXPERIÈNCIA</a></li>
-        <li><a href="#proyectos">PROJECTES</a></li>
-        <li><a href="#contacto">CONTACTE</a></li>
-        
-        <li class="selector-idioma" aria-haspopup="true" aria-expanded="false">
-          <button aria-label="Seleccionar idioma" id="btn-idioma" aria-controls="menu-idiomas" aria-haspopup="listbox" aria-expanded="false" aria-haspopup="true">
-            <img src="imagenes/valencia.png" alt="Valencià" class="bandera-icono" id="icono-idioma-principal" />
+  <!-- Barra de navegación -->
+<header class="barra-navegacion">
+  <div class="nombre">
+    <span id="typing-text"></span>
+  </div>
+  <nav class="menu" role="navigation" aria-label="Menú principal">
+    <ul>
+      <li><a href="#sobre-mi" data-traduccion="nav_sobreMi">SOBRE MI</a></li>
+      <li><a href="#habilidades" data-traduccion="nav_Habilidades">HABILIDADES</a></li>
+      <li><a href="#educacion" data-traduccion="nav_Educacion">EDUCACIÓN</a></li>
+      <li><a href="#experiencia" data-traduccion="nav_Experiencia">EXPERIENCIA</a></li>
+      <li><a href="#proyectos" data-traduccion="nav_Proyectos">PROYECTOS</a></li>
+      <li><a href="#contacto" data-traduccion="nav_Contacto">CONTACTO</a></li>
+      <li>
+        <div class="selector-idioma" role="region" aria-label="Selector de idioma">
+          <button id="btn-idioma" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="btn-idioma-label" type="button" style="display: flex; align-items: center; gap: 6px;">
+            <img id="bandera-actual" src="imagenes/esp.png" alt="Bandera Castellano" style="width: 20px; height: auto; border-radius: 3px;" />
+            <span id="btn-idioma-label" data-traduccion="btn_idioma_castellano">Castellano</span>
+            <i class="fas fa-chevron-down" aria-hidden="true" style="margin-left: 4px;"></i>
           </button>
-          <ul class="menu-idiomas" id="menu-idiomas" role="listbox" tabindex="-1">
-            <li role="option"><button data-idioma="val" class="idioma-btn"><img src="imagenes/valencia.png" alt="Valencià" /> Valencià</button></li>
-            <li role="option"><button data-idioma="es" class="idioma-btn"><img src="imagenes/esp.png" alt="Español" /> Castellà</button></li>
-            <li role="option"><button data-idioma="en" class="idioma-btn"><img src="imagenes/ing.jpg" alt="English" /> Anglés</button></li>
+          <ul id="lista-idiomas" role="listbox" tabindex="-1" aria-activedescendant="" class="" style="position: absolute; background: #1a1a1a; list-style: none; margin: 0; padding: 0.5rem 0; border-radius: 6px; box-shadow: 0 0 10px rgba(0,0,0,0.7);">
+            <li role="option" data-idioma="es" aria-selected="true" id="op-es" style="padding: 6px 12px; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+              <img src="imagenes/esp.png" alt="Castellano" style="width: 20px; height: auto; border-radius: 3px;" /> <span data-traduccion="idioma_castellano">Castellano</span>
+            </li>
+            <li role="option" data-idioma="val" aria-selected="false" id="op-val" style="padding: 6px 12px; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+              <img src="imagenes/valencia.png" alt="Valenciano" style="width: 20px; height: auto; border-radius: 3px;" /> <span data-traduccion="idioma_valenciano">Valenciano</span>
+            </li>
+            <li role="option" data-idioma="en" aria-selected="false" id="op-en" style="padding: 6px 12px; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+              <img src="imagenes/ing.jpg" alt="Inglés" style="width: 20px; height: auto; border-radius: 3px;" /> <span data-traduccion="idioma_ingles">Inglés</span>
+            </li>
+            <li role="option" data-idioma="pt" aria-selected="false" id="op-pt" style="padding: 6px 12px; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+              <img src="imagenes/portugal.png" alt="Portugués" style="width: 20px; height: auto; border-radius: 3px;" /> <span data-traduccion="idioma_portugues">Portugués</span>
+            </li>
+            <li role="option" data-idioma="gl" aria-selected="false" id="op-gl" style="padding: 6px 12px; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+              <img src="imagenes/gall.png" alt="Gallego" style="width: 20px; height: auto; border-radius: 3px;" /> <span data-traduccion="idioma_gallego">Gallego</span>
+            </li>
           </ul>
-        </li>
-      </ul>
-    </nav>
-  </header>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
 
   <main class="container" id="sobre-mi">
     <div class="left-side">
-      <h2>SOBRE MI</h2>
+      <h2 data-traduccion="h2_sobreMi">SOBRE MI</h2>
       <h1>
-        <span class="text-pink-light">Hola,</span><br />
+        <span class="text-pink-light" data-traduccion="saludo_hola">Hola,</span><br />
         <span class="text-white">
-          Sóc <span class="text-pink-dark">Pau Ribera,</span>
+          <span data-traduccion="soy">Soy</span> <span class="text-pink-dark">Pau Ribera,</span>
         </span><br />
-        Sóc <span class="text-teal">Senior Software Engineer.</span>
+        <span data-traduccion="soy_titulo">Soy</span> <span class="text-teal">Senior Software Engineer.</span>
       </h1>
 
-      <div class="social-icons" role="region" aria-label="Xarxes socials">
+      <div class="social-icons" role="region" aria-label="Redes sociales">
         <a href="https://github.com/PauLacasito4" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Pau"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/PauLacasito4" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Pau"><i class="fab fa-linkedin"></i></a>
         <a href="https://www.instagram.com/paauu.rs" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Pau"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
 
-    <div class="code-block" aria-label="Bloc de codi amb informació personal">
+    <div class="code-block" aria-label="Bloque de código con información personal">
       <div class="dots" aria-hidden="true">
         <span class="dot dot-red"></span>
         <span class="dot dot-yellow"></span>
@@ -72,11 +87,11 @@
   <span class="text-white">String</span> backend = <span class="text-yellow">"Java, PHP, Python"</span>;
   <span class="text-white">String</span> databases = <span class="text-yellow">"MySQL, PostgreSQL"</span>;
   <span class="text-white">String</span> tools = <span class="text-yellow">"pgAdmin4, Linux, VirtualBox, VMware, NetBeans, Visual Studio Code, Visual Studio, Photoshop"</span>;
-  <span class="text-white">String</span> languajes = <span class="text-yellow">"Valencià, Castellà, Anglés"</span>;
+  <span class="text-white">String</span> languajes = <span class="text-yellow">"Valenciano, Castellano, Inglés"</span>;
 
   <span class="text-white">boolean</span> hardWorker = <span class="text-green">true</span>;
   <span class="text-white">boolean</span> problemSolver = <span class="text-green">true</span>;
-  <span class="text-white">String</span> expertise = <span class="text-yellow">"Full-Stack Developer en formació"</span>;
+  <span class="text-white">String</span> expertise = <span class="text-yellow" data-traduccion="expertise_texto">"Full-Stack Developer en formación"</span>;
 <span class="text-white">}</span>
       </pre>
     </div>
@@ -84,51 +99,51 @@
 
   <div class="separador"></div>
 
-  <!-- Secció d'habilitats -->
+  <!-- Sección de habilidades -->
   <section class="habilidades" id="habilidades">
-    <h2>HABILITATS</h2>
+    <h2 data-traduccion="h2_habilidades">HABILIDADES</h2>
 
     <div class="habilidades-grid">
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" /><span>HTML</span></div>
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" /><span>CSS</span></div>
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" /><span>JavaScript</span></div>
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" /><span>Java</span></div>
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" /><span>PHP</span></div>
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" /><span>Python</span></div>
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" /><span>MySQL</span></div>
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" /><span>PostgreSQL</span></div>
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" /><span>Linux</span></div>
-      <div class="habilidad"><img src="https://img.icons8.com/fluency/48/windows-10.png" alt="Windows" /><span>Windows</span></div>
-      <div class="habilidad"><img src="https://img.icons8.com/color/48/vmware.png" alt="VMware" /><span>VMware</span></div>
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" /><span>VS Code</span></div>
-      <div class="habilidad"><img src="https://www.apachefriends.org/images/xampp-logo-ac950edf.svg" alt="XAMPP" /><span>XAMPP</span></div>
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" /><span>Git</span></div>
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" /><span>GitHub</span></div>
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" /><span>Figma</span></div>
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" /><span>Docker</span></div>
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" /><span>WordPress</span></div>
-      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop" /><span>Photoshop</span></div>
-      <div class="habilidad"><img src="https://img.icons8.com/fluency/48/microsoft-office-2019.png" alt="Office" /><span>Office</span></div>
-      <div class="habilidad"><img src="https://img.icons8.com/color/48/000000/virtualbox.png" alt="VirtualBox" /><span>VirtualBox</span></div>
-      <div class="habilidad"><img src="imagenes/Tailwind.png" alt="Tailwind CSS" /><span>Tailwind CSS</span></div>
-      <div class="habilidad"><img src="imagenes/odoo.webp" alt="Odoo" style="background: white; border-radius: 5px; padding: 2px;" /><span>Odoo</span></div>
-      <div class="habilidad"><img src="imagenes/tracer.webp" alt="Packet Tracer" style="border-radius: 5px;" /><span>Packet Tracer</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" /><span data-traduccion="hab_html">HTML</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" /><span data-traduccion="hab_css">CSS</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" /><span data-traduccion="hab_js">JavaScript</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" /><span data-traduccion="hab_java">Java</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" /><span data-traduccion="hab_php">PHP</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" /><span data-traduccion="hab_python">Python</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" /><span data-traduccion="hab_mysql">MySQL</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" /><span data-traduccion="hab_postgresql">PostgreSQL</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" /><span data-traduccion="hab_linux">Linux</span></div>
+      <div class="habilidad"><img src="https://img.icons8.com/fluency/48/windows-10.png" alt="Windows" /><span data-traduccion="hab_windows">Windows</span></div>
+      <div class="habilidad"><img src="https://img.icons8.com/color/48/vmware.png" alt="VMware" /><span data-traduccion="hab_vmware">VMware</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" /><span data-traduccion="hab_vscode">VS Code</span></div>
+      <div class="habilidad"><img src="https://www.apachefriends.org/images/xampp-logo-ac950edf.svg" alt="XAMPP" /><span data-traduccion="hab_xampp">XAMPP</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" /><span data-traduccion="hab_git">Git</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" /><span data-traduccion="hab_github">GitHub</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" /><span data-traduccion="hab_figma">Figma</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" /><span data-traduccion="hab_docker">Docker</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" /><span data-traduccion="hab_wordpress">WordPress</span></div>
+      <div class="habilidad"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop" /><span data-traduccion="hab_photoshop">Photoshop</span></div>
+      <div class="habilidad"><img src="https://img.icons8.com/fluency/48/microsoft-office-2019.png" alt="Office" /><span data-traduccion="hab_office">Office</span></div>
+      <div class="habilidad"><img src="https://img.icons8.com/color/48/000000/virtualbox.png" alt="VirtualBox" /><span data-traduccion="hab_virtualbox">VirtualBox</span></div>
+      <div class="habilidad"><img src="imagenes/Tailwind.png" alt="Tailwind CSS" /><span data-traduccion="hab_tailwind">Tailwind CSS</span></div>
+      <div class="habilidad"><img src="imagenes/odoo.webp" alt="Odoo" style="background: white; border-radius: 5px; padding: 2px;" /><span data-traduccion="hab_odoo">Odoo</span></div>
+      <div class="habilidad"><img src="imagenes/tracer.webp" alt="Packet Tracer" style="border-radius: 5px;" /><span data-traduccion="hab_packettracer">Packet Tracer</span></div>
     </div>
   </section>
 
   <div class="separador"></div>
 
-  <!-- Secció d'educació -->
+  <!-- Sección de educación -->
   <section class="educacion-modern" id="educacion">
-    <h2>EDUCACIÓ</h2>
+    <h2 data-traduccion="h2_educacion">EDUCACIÓN</h2>
     <div class="educacion-grid">
 
       <div class="educacion-item">
         <div class="contenido-educacion">
           <div class="texto-educacion">
-            <span class="fecha">2024 - actualment</span>
-            <h3>Grau Superior en Desenvolupament d’Aplicacions Web</h3>
-            <p>IES José Rodrigo Botet</p>
+            <span class="fecha" data-traduccion="fecha_2024_actual">2024 - actualmente</span>
+            <h3 data-traduccion="grado_daw">Grado Superior en Desarrollo de Aplicaciones Web</h3>
+            <p data-traduccion="ies_jose_rodrigo_botet">IES José Rodrigo Botet</p>
           </div>
           <div class="imagen-educacion">
             <img src="imagenes/RodrigoBotet.png" alt="DAW" />
@@ -139,9 +154,9 @@
       <div class="educacion-item">
         <div class="contenido-educacion">
           <div class="texto-educacion">
-            <span class="fecha">2022 - 2024</span>
-            <h3>Grau Mitjà Sistemes Microinformàtics i Xarxes</h3>
-            <p>Centre Privat La Puríssima València</p>
+            <span class="fecha" data-traduccion="fecha_2022_2024">2022 - 2024</span>
+            <h3 data-traduccion="grado_smr">Grado Medio en Sistemas Microinformáticos y Redes</h3>
+            <p data-traduccion="centro_la_purisima">Centro Privado La Purísima Valencia</p>
           </div>
           <div class="imagen-educacion">
             <img src="imagenes/LaPurisima.jpeg" alt="SMR" />
@@ -152,9 +167,9 @@
       <div class="educacion-item">
         <div class="contenido-educacion">
           <div class="texto-educacion">
-            <span class="fecha">2017 - 2022</span>
-            <h3>Educació Secundària Obligatòria</h3>
-            <p>Centre Concertat d’Ensenyament Assumpció de la Mare de Déu</p>
+            <span class="fecha" data-traduccion="fecha_2017_2022">2017 - 2022</span>
+            <h3 data-traduccion="eso">Educación Secundaria Obligatoria</h3>
+            <p data-traduccion="centro_asuncion">Centro Concertado de Enseñanza Asunción de Nuestra Señora</p>
           </div>
           <div class="imagen-educacion">
             <img src="imagenes/Asuncion.jpg" alt="ESO" />
@@ -167,19 +182,19 @@
 
   <div class="separador"></div>
 
-  <!-- Secció d’experiència -->
+  <!-- Sección de experiencia -->
   <section class="experiencia-modern" id="experiencia">
-    <h2>EXPERIÈNCIA</h2>
+    <h2 data-traduccion="h2_experiencia">EXPERIENCIA</h2>
     <div class="experiencia-grid">
       <div class="experiencia-item">
-        <span class="fecha">20/03/2025 - 13/06/2025</span>
+        <span class="fecha" data-traduccion="fecha_practicas_2025">20/03/2025 - 13/06/2025</span>
         <div class="contenido-con-imagen">
           <div class="imagen-cuadro">
-            <img src="imagenes/FotoPolicia.png" alt="Foto pràctiques logo policia" />
+            <img src="imagenes/FotoPolicia.png" alt="Foto prácticas logo policía" />
           </div>
           <div class="texto-cuadro">
-            <h3>Pràctiques Grau Mitjà</h3>
-            <p>Tècnic de sistemes microinformàtics a la Policia Local de Riba-roja de Túria</p>
+            <h3 data-traduccion="practicas_grado_medio">Prácticas Grado Medio</h3>
+            <p data-traduccion="tecnico_sistemas_policia">Técnico de sistemas microinformáticos en la Policía Local de Riba-roja de Túria</p>
           </div>
         </div>
       </div>
@@ -188,51 +203,52 @@
 
   <div class="separador"></div>
 
-  <!-- Secció de projectes -->
+  <!-- Sección de proyectos -->
   <section class="proyectos" id="proyectos" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; padding: 2rem 0;">
-    <h2>PROJECTES</h2>
+    <h2 data-traduccion="h2_proyectos">PROYECTOS</h2>
     <div class="proyecto" style="text-align: center;">
       <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnV4b2Y2emEyeWNwemhidXZqZmw0cDU5MWwwcXBwODl6YXl4dDJnMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vvaF3ntoJR1QJVy81B/giphy.gif" alt="gif goofy" style="max-width: 400px; width: 100%; border-radius: 12px;" />
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 1.2rem; color: #ff0080; font-weight: 600; margin-top: 1rem;">
-        Estem treballant en els projectes
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 1.2rem; color: #ff0080; font-weight: 600; margin-top: 1rem;" data-traduccion="proyectos_trabajando">
+        Estamos trabajando en los proyectos
       </p>
     </div>
   </section>
 
   <div class="separador"></div>
 
-  <!-- Secció de contacte -->
+  <!-- Sección de contacto -->
   <section class="contacto" id="contacto">
-    <h2>CONTACTE</h2>
+    <h2 data-traduccion="h2_contacto">CONTACTO</h2>
     <div class="contacto">
       <form class="formulario-moderno" action="https://formspree.io/f/yourID" method="POST">
-        <h3>Envia'm un missatge</h3>
+        <h3 data-traduccion="contacto_envio_mensaje">Envíame un mensaje</h3>
 
         <div class="input-group">
-          <label for="nombre">Nom</label>
-          <input type="text" id="nombre" name="nombre" placeholder="El teu nom" required autocomplete="name" />
+          <label for="nombre" data-traduccion="label_nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" data-traduccion="placeholder_nombre" placeholder="Tu nombre" required autocomplete="name" />
         </div>
 
         <div class="input-group">
-          <label for="email">Correu electrònic</label>
-          <input type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email" />
+          <label for="email" data-traduccion="label_email">Correo electrónico</label>
+          <input type="email" id="email" name="email" data-traduccion="placeholder_email" placeholder="tu@email.com" required autocomplete="email" />
         </div>
 
         <div class="input-group">
-          <label for="mensaje">Missatge</label>
-          <textarea id="mensaje" name="mensaje" placeholder="Escriu el teu missatge ací..." rows="5" required></textarea>
+          <label for="mensaje" data-traduccion="label_mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" data-traduccion="placeholder_mensaje" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
         </div>
 
-        <button type="submit">Enviar missatge</button>
+        <button type="submit" data-traduccion="boton_enviar">Enviar mensaje</button>
       </form>
     </div>
   </section>
 
-  <br /><br />
+  <br><br><br><br><br>
+
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-left">
-        <p>&copy; 2025 Pau Ribera. Tots els drets reservats.</p>
+        <p data-traduccion="footer_derechos">&copy; 2025 Pau Ribera. Tots els drets reservats.</p>
       </div>
     </div>
   </footer>
