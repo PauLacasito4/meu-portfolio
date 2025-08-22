@@ -452,6 +452,65 @@ h2 {
   }
 }
 
+.certificados {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.certificados h2 {
+  font-size: 2rem;
+  color: #2dd4bf;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #2dd4bf;
+}
+
+.certificados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem; /* antes 1rem, ahora más juntos */
+  justify-items: center;
+}
+.certificado {
+  background-color: #1e293b;
+  padding: 0.5rem; /* antes 1rem */
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 180px;
+  text-align: center;
+}
+
+
+.certificado:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #0ea5e9;
+}
+.certificado img {
+  width: 100%;      
+  max-width: 250px;  
+  height: auto;      
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.btn-ver-certificado {
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  background: linear-gradient(135deg, #ff007a, #ff4d9e);
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-ver-certificado:hover {
+  background: linear-gradient(135deg, #ff4d9e, #ff007a);
+  box-shadow: 0 4px 12px rgba(255,0,122,0.5);
+}
+
 .experiencia-modern {
   padding: 5rem 2rem;
   max-width: 1100px;
